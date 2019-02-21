@@ -2,8 +2,23 @@
 <html>
 <head>
 	<title>PeasantSim</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="libgif.js"></script>
+	<script type="text/javascript" src="rubbable.js"></script>
 </head>
 <body>
+	<img src="1.gif"/>
 
+	<script type="text/javascript">
+	    $('img').each(function () {
+	    	console.log(this.src);
+	        if (/.*\.gif/.test(this.src)) {
+	            var rub = new SuperGif({ gif: this } );
+	            rub.load(function(){
+	                console.log('oh hey, now the gif is loaded');
+	            });
+	        }
+	    });
+	</script>
 </body>
 </html>
