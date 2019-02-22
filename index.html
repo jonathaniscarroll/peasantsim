@@ -69,7 +69,7 @@
 	    $('img').each(function () {
 	    	var toAppend = "<img src='" + $(this).attr("src") + "' />";
 	    	var x = $(this).parent().height();
-	    	var y = $(window).height();
+	    	var y = $(window).height() + x;
 	    	var a = [];
 	    	var sibling = this;
 	    	while(x<y){
