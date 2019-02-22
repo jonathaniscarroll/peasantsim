@@ -53,12 +53,12 @@
 
 	<script type="text/javascript">
 		$('body').width($(".content").width());
-	   //  $('img').each(function () {
-	   //  	var toAppend = "<img src='" + $(this).attr("src") + "' />";
-	   //  	var x = $(this).parent().height();
-	   //  	var y = $(window).height() + x;
-	   //  	var a = [];
-	   //  	var sibling = this;
+	    $('img').each(function () {
+	    	var toAppend = "<img src='" + $(this).attr("src") + "' />";
+	    	var x = $(this).parent().height();
+	    	var y = $(window).height() + x;
+	    	var a = [];
+	    	var sibling = this;
 	   //  	while(x<y){
     			
 				// $(sibling).after(toAppend);
@@ -69,10 +69,10 @@
 	   //  		x=$(this).parent().height();
 	   //  	}
 	   //  	$(this).remove();
-	   //  	console.log(a[2]);
-	   //  	// myLoop(a);
-	   //  	// console.log(this.src);
-	   //  });
+	    	console.log(a[2]);
+	    	// myLoop(a);
+	    	// console.log(this.src);
+	    });
 
 	    function myLoop (array) {   
 	    	var x = 1;
