@@ -78,8 +78,9 @@
 				var newGif = $(sibling).next();
 				sibling = newGif;
 				a.push(newGif);  
-				console.log("x " + x + " y " + y + " length " + a.length);
+				console.log("x " + x);
 	    		x=$(this).parent().height();
+	    		console.log("new x " + x );
 	    	}
 	    	$(this).remove();
 	    	// console.log(a[2]);
