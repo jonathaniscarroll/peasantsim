@@ -3,22 +3,100 @@
 <head>
 	<title>PeasantSim</title>
 	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript" src="libgif.js"></script>
-	<script type="text/javascript" src="rubbable.js"></script>
+	<style>
+	body{
+		margin: 0;
+		width:100%;
+	}
+	.content{
+		width: 1500px;
+	}
+	.content img{
+		height: 300px;
+		margin-bottom:-10px;
+	}
+	.text{
+		position:fixed;
+		color:white;
+		font-size: 10vh;
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+	}
+	.otherText{
+		position: fixed;
+		display: block;
+		width:75vw;
+		height:100vh;
+		color: white;
+		font-size: 5vh;
+		/*padding-top:20vh;*/
+		padding:20vh 0vw;
+
+	}
+	.otherText p {
+		background-color:rgba(0,0,255,.2);
+	}
+	</style>
 </head>
 <body>
-	<img src="1.gif"/>
+	<div class="text">
+		<h1>PeasantSim</h1>
+	</div>
+	<div class="otherText">
+		<p>you are a worker in the technofeudal wasteland of the gig economy. PeasantSim gives you virtual gigs, and requires you to move through Real space overlaid by Augmented reality, in order to complete your gigs before they run out of value.</p>
+		<p>PeasantSim is being developed as a response to SidwalksLab, an exercise in urban data accumulation that threatens to become a newly exploited commmons for our real life technofeudal overlords, Google. PeasantSim fosters conversations about spaces, technology, and labour in the face of ever-encroaching corporate reach.</p>
+	</div>
+	<div class="content">
+		<img src="0.gif"/>
+	</div>
+	
 
 	<script type="text/javascript">
+		$('body').width($(".content").width());
 	    $('img').each(function () {
-	    	console.log(this.src);
-	        if (/.*\.gif/.test(this.src)) {
-	            var rub = new SuperGif({ gif: this } );
-	            rub.load(function(){
-	                console.log('oh hey, now the gif is loaded');
-	            });
-	        }
+	    	var toAppend = "<img src='" + $(this).attr("src") + "' />";
+	    	var x = $(this).parent().height();
+	    	var y = $(window).height() + x;
+	    	var a = [];
+	    	var sibling = this;
+	    	while(x<y){
+    			
+				$(sibling).after(toAppend);
+				var newGif = $(sibling).next();
+				sibling = newGif;
+				a.push(newGif);  
+				console.log(a.length);
+	    		x=$(this).parent().height();
+	    	}
+	    	$(this).remove();
+	    	console.log(a[2]);
+	    	myLoop(a);
+	    	// console.log(this.src);
 	    });
+
+	    function myLoop (array) {   
+	    	var x = 1;
+	    	var i = 0; 
+		    setInterval(function(){ 
+		    	
+		    	// console.log(array[i]);
+		    	$(array).each(function(){
+		    		array[i].prop('src',x+'.gif');
+			    	if(i<array.length-1){
+			    		i++;
+			    	} else {
+			    		i = 0;
+			    		if(x<3){
+			    			x++;
+			    		} else {
+			    			x = 0;
+			    		}
+			    	}
+		    	})
+		    }, 13500);
+
+		}
+
 	</script>
 </body>
 </html>
