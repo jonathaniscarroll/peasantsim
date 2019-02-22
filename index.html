@@ -59,17 +59,17 @@
 	    	var y = $(window).height() + x;
 	    	var a = [];
 	    	var sibling = this;
-	   //  	while(x<y){
+	    	while(x<y){
     			
-				// $(sibling).after(toAppend);
-				// var newGif = $(sibling).next();
-				// sibling = newGif;
-				// a.push(newGif);  
-				// console.log(a.length);
-	   //  		x=$(this).parent().height();
-	   //  	}
-	   //  	$(this).remove();
-	    	console.log(a[2]);
+				$(sibling).after(toAppend);
+				var newGif = $(sibling).next();
+				sibling = newGif;
+				a.push(newGif);  
+				console.log(a.length);
+	    		x=$(this).parent().height();
+	    	}
+	    	$(this).remove();
+	    	// console.log(a[2]);
 	    	// myLoop(a);
 	    	// console.log(this.src);
 	    });
