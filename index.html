@@ -20,6 +20,7 @@
 	body{
 		margin: 0;
 		width:100%;
+		background-color: blue;
 	}
 	.content{
 		width: 1500px;
@@ -43,11 +44,11 @@
 		color: white;
 		font-size: 5vh;
 		/*padding-top:20vh;*/
-		padding:20vh 0vw;
+		/*padding:20vh 0vw;*/
 
 	}
 	.otherText p {
-		background-color:rgba(0,0,255,.2);
+		background-color:rgba(0,0,255,.5);
 	}
 	</style>
 </head>
@@ -56,8 +57,9 @@
 		<h1>PeasantSim</h1>
 	</div>
 	<div class="otherText">
-		<p>You are a worker in the technofeudal wasteland of the gig economy. Acquire virtual gigs, and move through Real space overlaid by Augmented reality, in order to complete your gigs before they run out of value.</p>
-		<p>PeasantSim is being developed as a response to SidwalksLab, an exercise in urban data accumulation that threatens to become a newly exploited commmons for our real life technofeudal overlords, Google. PeasantSim fosters conversations about spaces, technology, and labour in the face of ever-encroaching corporate reach.</p>
+		<p>You are a worker in the technofeudal wasteland of the gig economy. Set in a privatized, post-state technocracy of international corporate rights fostered by powerful lobbyists, PeasantSim gives you virtual gigs to move through physical space overlaid by Augmented Reality. You are tasked with the impossible: completing your gigs before they run out of value as an erstwhile resource for corporate data-miners.</p>
+		<p>PeasantSim is being developed as a response to questions raised by the obfuscated ‘public’ process connected to Sidewalk Labs techno-utopian proposal to revitalize Toronto’s waterfront-- an exercise in urban data accumulation that threatens to become a newly exploited commons for our real life technofeudal overlords, Google.</p>
+		<p>PeasantSim provokes conversations about spaces, technology, and labour in the face of ever-encroaching corporate reach.</p>
 	</div>
 	<div class="content">
 		<img src="0.gif"/>
@@ -65,7 +67,7 @@
 	
 
 	<script type="text/javascript">
-		$('body').width($(".content").width());
+		// $('body').width($(".content").width());
 	    $('img').each(function () {
 	    	var toAppend = "<img src='" + $(this).attr("src") + "' />";
 	    	var x = $(this).parent().height();
