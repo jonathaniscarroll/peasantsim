@@ -58,6 +58,10 @@
       bottom: 10px;
       right: 10px;
     }
+    #fullscreen {
+      bottom: 10px;
+      left: 10px;
+    }
   </style>
 </head>
 <body>
@@ -65,14 +69,30 @@
     <iframe id="game" src="https://itch.io/embed-upload/2029495?color=001dde" allowfullscreen frameborder="0"></iframe>
     <button id="instructions" class="overlay-button">Instructions</button>
     <button id="info" class="overlay-button">Game Info</button>
+	<button id="fullscreen" class="overlay-button">Fullscreen</button>
+	
   </div>
   <script>
     document.querySelector("#instructions").addEventListener("click", function() {
       alert("Instructions: left click to move, right click to plant, interact with characters using the mouse. Follow the in-game prompts to make choices and progress.");
     });
     document.querySelector("#info").addEventListener("click", function() {
-      alert("PeasantSim is an innovative indie MMORPG that explores the themes of technofeudalism and platform capitalism by SpekWork. Immerse yourself in the life of a peasant, navigate the complex world, and make lasting decisions that will shape your story.");
+      alert("PeasantSim is an innovative fake MMORPG that explores the themes of technofeudalism and platform capitalism by SpekWork. Immerse yourself in the life of a peasant, navigate the complex world, and make lasting decisions that will shape your story.");
     });
+	document.querySelector("#fullscreen").addEventListener("click", function() {
+      const game = document.querySelector("#game");
+      if (game.requestFullscreen) {
+        game.requestFullscreen();
+      } else if (game.webkitRequestFullscreen) { // Chrome, Safari (webkit)
+        game.webkitRequestFullscreen();
+      } else if (game.msRequestFullscreen) { // IE/Edge
+        game.msRequestFullscreen();
+      } else if (game.mozRequestFullScreen) { // Firefox
+        game.mozRequestFullScreen();
+      }
+    });
+	
+
   </script>
 </body>
 </html>
