@@ -73,6 +73,11 @@
 	
   </div>
   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+        window.location.href = "https://spekwork.itch.io/peasantsim";
+      }
+    });
     document.querySelector("#instructions").addEventListener("click", function() {
       alert("Instructions: left click to move, right click to plant, interact with characters using the mouse. Follow the in-game prompts to make choices and progress.");
     });
