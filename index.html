@@ -1,118 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132324774-4"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132324774-4"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 
 	  gtag('config', 'UA-132324774-4');
-	</script> -->
-
-	<title>PeasantSim</title>
-	<link rel="icon" 
-      type="image/gif" 
-      href="favicon.gif">
-	<script type="text/javascript" src="jquery.js"></script>
-	<style>
-	body{
-		margin: 0;
-		width:100%;
-		background-color: blue;
-	}
-	.content{
-		width: 1500px;
-	}
-	.content img{
-		height: 300px;
-		margin-bottom:-10px;
-	}
-	.text{
-		position:fixed;
-		color:white;
-		font-size: 10vh;
-		writing-mode: vertical-rl;
-		text-orientation: mixed;
-	}
-	.otherText{
-		position: fixed;
-		display: block;
-		width:75vw;
-		height:100vh;
-		color: white;
-		font-size: 5vh;
-		/*padding-top:20vh;*/
-		/*padding:20vh 0vw;*/
-
-	}
-	.otherText p {
-		background-color:rgba(0,0,255,.5);
-	}
-	</style>
+	</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PeasantSim - An innovative indie game that explores the themes of technofeudalism and platform capitalism from a peasant's perspective.">
+  <meta name="keywords" content="PeasantSim, Indie Game, MMORPG, Technofeudalism, Platform Capitalism">
+  <link rel="icon" 
+  type="image/gif" 
+  href="favicon.gif">
+  <title>PeasantSim - A unique indie MMORPG</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #game-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    #game {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .overlay-button {
+      position: absolute;
+      z-index: 10;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: white;
+      background-color: #001dde;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      border-radius: 5px;
+    }
+    #instructions {
+      top: 10px;
+      right: 10px;
+    }
+    #info {
+      bottom: 10px;
+      right: 10px;
+    }
+  </style>
 </head>
 <body>
-	<div class="text">
-		<h1>PeasantSim</h1>
-	</div>
-	<div class="otherText">
-		<p>You are a worker in the technofeudal wasteland of the gig economy. Set in a privatized, post-state technocracy of international corporate rights fostered by powerful lobbyists, PeasantSim gives you virtual gigs to move through physical space overlaid by Augmented Reality. You are tasked with the impossible: completing your gigs before they run out of value as an erstwhile resource for corporate data-miners.</p>
-		<p>PeasantSim is being developed as a response to questions raised by the obfuscated 'public' process connected to Sidewalk Labs techno-utopian proposal to revitalize Toronto's waterfront-- an exercise in urban data accumulation that threatens to become a newly exploited commons for our real life technofeudal overlords, Google.</p>
-		<p>PeasantSim provokes conversations about spaces, technology, and labour in the face of ever-encroaching corporate reach.</p>
-	</div>
-	<div class="content">
-		<img src="0.gif"/>
-	</div>
-	
-
-	<script type="text/javascript">
-		// $('body').width($(".content").width());
-	    $('img').each(function () {
-	    	var toAppend = "<img src='" + $(this).attr("src") + "' />";
-	    	var x = $(this).parent().height();
-	    	var y = $(window).height() + x;
-	    	var a = [];
-	    	var sibling = this;
-	    	while(x<y){
-    			
-				$(sibling).after(toAppend);
-				var newGif = $(sibling).next();
-				sibling = newGif;
-				a.push(newGif);  
-				// console.log("x " + x);
-	    		x=$(this).parent().height();
-	    		// console.log("new x " + x );
-	    	}
-	    	$(this).remove();
-	    	// console.log(a[2]);
-	    	myLoop(a);
-	    	// console.log(this.src);
-	    });
-
-	    function myLoop (array) {   
-	    	var x = 1;
-	    	var i = 0; 
-		    setInterval(function(){ 
-		    	
-		    	// console.log(array[i]);
-		    	$(array).each(function(){
-		    		array[i].prop('src',x+'.gif');
-			    	if(i<array.length-1){
-			    		i++;
-			    	} else {
-			    		i = 0;
-			    		if(x<3){
-			    			x++;
-			    		} else {
-			    			x = 0;
-			    		}
-			    	}
-		    	})
-		    }, 13500);
-
-		}
-
-	</script>
+  <div id="game-container">
+    <iframe id="game" src="https://itch.io/embed-upload/2029495?color=001dde" allowfullscreen frameborder="0"></iframe>
+    <button id="instructions" class="overlay-button">Instructions</button>
+    <button id="info" class="overlay-button">Game Info</button>
+  </div>
+  <script>
+    document.querySelector("#instructions").addEventListener("click", function() {
+      alert("Instructions: left click to move, right click to plant, interact with characters using the mouse. Follow the in-game prompts to make choices and progress.");
+    });
+    document.querySelector("#info").addEventListener("click", function() {
+      alert("PeasantSim is an innovative indie MMORPG that explores the themes of technofeudalism and platform capitalism by SpekWork. Immerse yourself in the life of a peasant, navigate the complex world, and make lasting decisions that will shape your story.");
+    });
+  </script>
 </body>
 </html>
+
+
+	
